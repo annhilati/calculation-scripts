@@ -1,4 +1,4 @@
-# calculation-scripts
+## Index
 
 Script | Function
 ------ | --------

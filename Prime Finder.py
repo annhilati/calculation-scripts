@@ -17,15 +17,17 @@ def is_prime(num):
     return True
 
 numberToCheck = numberStart
+numbersCheckingDone = 0
 
 # Programm
 while primesStillToFind > 0 and not numberEnd + 1 == numberToCheck:
     if is_prime(numberToCheck):
         print(f"{numberToCheck}")
         primesStillToFind -= 1
+    numbersCheckingDone += 1
     numberToCheck += 1
 
-primesPerSecond = primesToFind / (time.time() - start_time)
+primesPerSecond = numbersCheckingDone / (time.time() - start_time)
 print("-----[ RESULTS ]-----")
 print(f"{time.time() - start_time:.2f}s needed to find the first {primesToFind} prime numbers from {numberStart} to {numberEnd}. That is {primesPerSecond:.4f} primes per second.")
 

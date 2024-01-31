@@ -2,14 +2,14 @@ import time
 # Eingabe
 numberToBeginWith = int(input("Number to begin solving with for 3n+1: "))
 numbersToSolve = int(input("Numbers to solve for 3n+1: "))
-SolveTowardsMinus = False
+SolveTowardsMinus = True
 
 # Programm
 start_time = time.time()
 numberToSolveFor = numberToBeginWith
 numbersStillToSolve = numbersToSolve
 operationsDone = 0
-operationsRecord = 0
+operationsRecord = -1
 
 while numbersStillToSolve > 0: # and numberToSolveFor >= numberToBeginWith:
     numberCalc = numberToSolveFor
@@ -34,8 +34,9 @@ while numbersStillToSolve > 0: # and numberToSolveFor >= numberToBeginWith:
         numberToSolveFor = numberToSolveFor - 1
 
 # Ausgabe
-if SolveTowardsMinus == False:
-   print(f"Done, solving for numbers from {numberToBeginWith} to {numberToBeginWith+numbersToSolve}")
-else:
-   print(f"Done, solving for numbers from {numberToBeginWith} to {numberToBeginWith-numbersToSolve}")
+print("--------[ RESULTS ]--------")
+print(f"Numbers solved:      {numberToBeginWith} to {numberToSolveFor}")
+print(f"Time needed:         {time.time() - start_time:.2f}s")
+print(f"Numbers per second:  {numbersToSolve / (time.time() - start_time):.2f}")
 
+print(f"Number with most calculations needed: (see last line of the log)")

@@ -2,7 +2,7 @@ import time
 # Eingabe
 numberToBeginWith = int(input("Number to begin solving with for 3n+1: "))
 numbersToSolve = int(input("Numbers to solve for 3n+1: "))
-SolveTowardsMinus = True
+SolveTowardsMinus = False
 
 # Programm
 start_time = time.time()

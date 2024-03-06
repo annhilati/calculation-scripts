@@ -1,7 +1,16 @@
 import time
 # Eingabe
-numberToBeginWith = int(input("Number to begin solving with for 3n+1: "))
-numbersToSolve = int(input("Numbers to solve for 3n+1: "))
+def inputInt(prompt):
+    allowed_characters = "-0123456789"
+    while True:
+        user_input = input(prompt)
+        if all(char in allowed_characters for char in user_input):
+            return user_input
+        else:
+            print("Invalid input! Please enter an integer")
+            
+numberToBeginWith = int(inputInt("Number to begin solving with for 3n+1: "))
+numbersToSolve = int(inputInt("Numbers to solve for 3n+1: "))
 SolveTowardsMinus = False
 
 # Programm
@@ -21,13 +30,13 @@ while numbersStillToSolve > 0: # and numberToSolveFor >= numberToBeginWith:
         else:
             numberCalc = numberCalc / 2
         operationsCalc = operationsCalc + 1
-            
+
     # Schreibt neue Rekorde in die Konsole
     operationsDone = operationsDone + operationsCalc
     if operationsCalc > operationsRecord:
-        print(f"{time.time() - start_time:.2f}s: Number {numberToSolveFor} broke the record of {operationsRecord} operations which is now {operationsCalc}, {operationsDone} total operations so far")
+        print(f"[{time.time() - start_time:.2f}s] Number {numberToSolveFor} broke the record of {operationsRecord} operations which is now {operationsCalc}, {operationsDone} total operations so far")
         operationsRecord = operationsCalc
-    
+
     # Gibt an, welche Zahl als nächstes gelöst wird
     numbersStillToSolve = numbersStillToSolve - 1
     if SolveTowardsMinus == False:

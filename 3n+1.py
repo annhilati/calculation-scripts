@@ -6,10 +6,11 @@ SolveTowardsMinus = False
 
 # Programm
 start_time = time.time()
-numberToSolveFor = numberToBeginWith
 numbersStillToSolve = numbersToSolve
 operationsDone = 0
 operationsRecord = -1
+
+numberToSolveFor = numberToBeginWith
 
 while numbersStillToSolve > 0: # and numberToSolveFor >= numberToBeginWith:
     numberCalc = numberToSolveFor

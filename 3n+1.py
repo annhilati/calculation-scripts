@@ -7,13 +7,18 @@ def inputInt(prompt):
         if all(char in allowedChar for char in userInput):
             return userInput
         else:
-            print("[Error] Invalid input! Please enter an integer")
+            print("[ERROR] Invalid input! Please enter an integer")
             
-numberToBeginWith = int(inputInt("Number to begin solving with for 3n+1: "))
-numbersToSolve = int(inputInt("Numbers to solve for 3n+1: "))
+numberToBeginWith = int(inputInt("[INPUT] Number to begin solving with for 3n+1: "))
+numbersToSolve = int(inputInt("[INPUT] Numbers to solve for 3n+1: "))
 SolveTowardsMinus = False
 
 # Programm
+if SolveTowardsMinus == True:
+    print(f"[INFO]  Numbers will be solved towards negative infinity until the specified calculations have been completed")
+else:
+    print(f"[INFO]  Numbers will be solved towards positive infinity until the specified calculations have been completed")
+
 startTime = time.time()
 numbersStillToSolve = numbersToSolve
 operationsDone = 0

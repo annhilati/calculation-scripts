@@ -8,7 +8,7 @@ primesToFind = int(input("Amount of prime numbers to find: "))
 start_time = time.time()
 primesStillToFind = primesToFind
 
-def is_prime(num):
+def isPrime(num):
     if num < 2:
         return False
     for i in range(2, int(num**0.5) + 1):
@@ -21,7 +21,7 @@ numbersCheckingDone = 0
 
 # Programm
 while primesStillToFind > 0 and not numberEnd + 1 == numberToCheck:
-    if is_prime(numberToCheck):
+    if isPrime(numberToCheck):
         print(f"{numberToCheck}")
         primesStillToFind -= 1
     numbersCheckingDone += 1

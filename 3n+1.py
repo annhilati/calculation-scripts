@@ -1,13 +1,13 @@
 import time
 # Eingabe
 def inputInt(prompt):
-    allowed_characters = "-0123456789"
+    allowedChar = "-0123456789"
     while True:
-        user_input = input(prompt)
-        if all(char in allowed_characters for char in user_input):
-            return user_input
+        userInput = input(prompt)
+        if all(char in allowedChar for char in userInput):
+            return userInput
         else:
-            print("Invalid input! Please enter an integer")
+            print("[Error] Invalid input! Please enter an integer")
             
 numberToBeginWith = int(inputInt("Number to begin solving with for 3n+1: "))
 numbersToSolve = int(inputInt("Numbers to solve for 3n+1: "))
@@ -51,3 +51,4 @@ print(f"Time needed:         {time.time() - start_time:.2f}s")
 print(f"Numbers per second:  {numbersToSolve / (time.time() - start_time):.2f}")
 print(" ")
 print(f"Number with most calculations needed: (see last line of the log)")
+

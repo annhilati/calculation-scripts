@@ -14,7 +14,7 @@ numbersToSolve = int(inputInt("Numbers to solve for 3n+1: "))
 SolveTowardsMinus = False
 
 # Programm
-start_time = time.time()
+startTime = time.time()
 numbersStillToSolve = numbersToSolve
 operationsDone = 0
 operationsRecord = -1
@@ -34,7 +34,7 @@ while numbersStillToSolve > 0: # and numberToSolveFor >= numberToBeginWith:
     # Schreibt neue Rekorde in die Konsole
     operationsDone = operationsDone + operationsCalc
     if operationsCalc > operationsRecord:
-        print(f"[{time.time() - start_time:.2f}s] Number {numberToSolveFor} broke the record of {operationsRecord} operations which is now {operationsCalc}, {operationsDone} total operations so far")
+        print(f"[{time.time() - startTime:.2f}s] Number {numberToSolveFor} broke the record of {operationsRecord} operations which is now {operationsCalc}, {operationsDone} total operations so far")
         operationsRecord = operationsCalc
 
     # Gibt an, welche Zahl als nächstes gelöst wird
@@ -47,8 +47,8 @@ while numbersStillToSolve > 0: # and numberToSolveFor >= numberToBeginWith:
 # Ausgabe
 print("--------[ RESULTS ]--------")
 print(f"Numbers solved:      {numberToBeginWith} to {numberToSolveFor}")
-print(f"Time needed:         {time.time() - start_time:.2f}s")
-print(f"Numbers per second:  {numbersToSolve / (time.time() - start_time):.2f}")
+print(f"Time needed:         {time.time() - startTime:.2f}s")
+print(f"Numbers per second:  {numbersToSolve / (time.time() - startTime):.2f}")
 print(" ")
 print(f"Number with most calculations needed: (see last line of the log)")
 

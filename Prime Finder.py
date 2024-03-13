@@ -1,8 +1,17 @@
 import time
 # Input
-numberStart = int(input("Number with which to start the search: "))
-numberEnd = int(input("Number to stop the search with: ")) 
-primesToFind = int(input("Amount of prime numbers to find: "))
+def inputInt(prompt):
+    allowedChar = "-0123456789"
+    while True:
+        userInput = input(prompt)
+        if all(char in allowedChar for char in userInput):
+            return userInput
+        else:
+            print("[ERROR] Invalid input! Please enter an integer")
+            
+numberStart = int(inputInt("Number with which to start the search: "))
+numberEnd = int(inputInt("Number to stop the search with: ")) 
+primesToFind = int(inputInt("Amount of prime numbers to find: "))
 
 # Definition
 start_time = time.time()

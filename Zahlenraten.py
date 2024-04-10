@@ -1,3 +1,8 @@
+# Config
+minNum = 0
+maxNum = 10
+
+# System
 from random import randint
 def inputPosInt(prompt):
     allowedChar = "0123456789"
@@ -6,7 +11,7 @@ def inputPosInt(prompt):
         if all(char in allowedChar for char in userInput):
             return int(userInput)
         else:
-            print("Du Idiot! Ich habe eine Ganzzahl gewählt! Versuchs nochmal!")
+            print("Du Idiot! Ich habe eine Ganzzahl gewählt! Versuchs nochmal!")    
 def inputYN(promt):
     allowedChar = "ynYN"
     while True:
@@ -19,13 +24,8 @@ def inputYN(promt):
         else:
             print("Bitte gib \"y\" oder \"n\" für yes und no an.")
 
-minNum = 0
-maxNum = 10
-
-
+# Programm
 anotherGame = True
-
-
 while anotherGame == True:
     numGuess = -1
     numRandom = randint(minNum, maxNum)
@@ -43,4 +43,5 @@ while anotherGame == True:
             print(f"Gut gemacht, du Atze! Meine Zahl war in der Tat {numRandom}")
         guesses.append(numGuess)
     anotherGame = inputYN("Willst du nochmal spielen? [Y/N] ")
+    print(" ")
 print("Spiel beendet")

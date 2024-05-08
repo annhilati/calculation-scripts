@@ -1,5 +1,6 @@
 from python import Python
 from math import pow
+import time as Time
 
 
 fn isPrime(num: Int) -> Bool:
@@ -11,24 +12,35 @@ fn isPrime(num: Int) -> Bool:
     return True
 
 
-def inputInt(prompt: String) -> Int:
-    py = Python.import_module("builtins")
-    allowedChar = "-0123456789"
+fn inputInt(prompt: String) raises -> Int:
+    var py = Python.import_module("builtins")
     while True:
-        statusOK = True
-        userInput = py.input(prompt)
-        #if all(char in allowedChar for char in userInput):
-        for char in userInput:
-            #print(char)
-            if not str(char) in allowedChar:
-                statusOK = False
-        if statusOK == True:
+        var userInput: String = str(py.input(prompt))
+        try:
             return int(userInput)
-        else:
+        except:
             print("[ERROR] Invalid input! Please enter an integer")
 
 
 fn main() raises:
-    var num = inputInt(">>> ")
 
-    print(isPrime(num))
+    var numberStart: Int = inputInt("Number with which to start the search: ")
+    var numberEnd: Int = inputInt("Number to stop the search with: ")
+    var primesToFind: Int = inputInt("Amount of prime numbers to find: ")
+
+    # Definition
+    var primesStillToFind = primesToFind
+
+    var numberToCheck = numberStart
+    var numbersCheckingDone = 0
+
+    while primesStillToFind > 0 and not numberEnd + 1 == numberToCheck:
+        if isPrime(numberToCheck):
+            print(numberToCheck)
+            primesStillToFind -= 1
+        numbersCheckingDone += 1
+        numberToCheck += 1
+
+    print("-----[ RESULTS ]-----")
+    #print(f"{time.time() - start_time:.2f}s needed to find the first {primesToFind} prime numbers from {numberStart} to {numberEnd}. That is {primesPerSecond:.4f} primes per second.")
+    print("Found the first", primesToFind, "prime numbers from", numberStart, "to", numberEnd)

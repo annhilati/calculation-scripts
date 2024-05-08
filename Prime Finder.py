@@ -1,12 +1,11 @@
 import time
 # Input
 def inputInt(prompt):
-    allowedChar = "-0123456789"
     while True:
         userInput = input(prompt)
-        if all(char in allowedChar for char in userInput):
-            return userInput
-        else:
+        try:
+            return int(userInput)
+        except:
             print("[ERROR] Invalid input! Please enter an integer")
             
 numberStart = int(inputInt("Number with which to start the search: "))

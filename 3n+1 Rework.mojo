@@ -33,16 +33,16 @@ fn main() raises:
         var opsCalc: Int = 0
 
         var x: Int = numberIteration
-        while x != 1 or 0 or -1 or -5 or -17:
+        while not x == 1:# or 0 or -1 or -5 or -17:
             if x % 2 == 1:
-                print("Debug 2", x)
+                print("Debug odd", x, opsCalc)
                 x = x * 3 + 1
             else:
-                print("Debug 3", x)
+                print("Debug even", x, opsCalc)
                 x = int(x / 2) # Gibt sonst Error
             opsCalc = opsCalc + 1
 
-        print("Debug 4")
+        print("Debug checking record")
         opsDone = opsDone + opsCalc
         if opsCalc > opsRecord:
             print('  ║ Number', numberIteration, 'broke the record of', opsRecord, 'operations which now is', opsCalc)

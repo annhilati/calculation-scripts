@@ -1,4 +1,5 @@
 from python import Python
+import time
 
 fn inputInt(prompt: String) raises -> Int:
     var py = Python.import_module("builtins")
@@ -10,6 +11,8 @@ fn inputInt(prompt: String) raises -> Int:
             print("  ║ [ERROR] Invalid input! Please enter an integer")
 
 fn main() raises:
+    var time = Python.import_module("time")
+
     print("╔════════════════════════════════════════════════════════════════════╗")
     print("║ Please enter a number to start the solvation                       ║")
     print("╚═╦══════════════════════════════════════════════════════════════════╝")
@@ -23,6 +26,8 @@ fn main() raises:
     var iterationsStill: Int = iterationsRequested
     var opsDone: Int = 0 
     var opsRecord: Int = -1 
+
+    var TimeStart = time.time()
 
     print("╔═╩══════════════════════════════════════════════════════════════════╗")
     print("║ Beginning Calculating...                                           ║")
@@ -41,14 +46,24 @@ fn main() raises:
 
         opsDone = opsDone + opsCalc
         if opsCalc > opsRecord:
+            var timestamp = time.time() - TimeStart
+            #print('  ║ ', timestamp, 'Number', numberIteration, 'broke the record of', opsRecord, 'operations which now is', opsCalc)
             print('  ║ Number', numberIteration, 'broke the record of', opsRecord, 'operations which now is', opsCalc)
             opsRecord = opsCalc
 
         iterationsStill = iterationsStill - 1
         numberIteration = numberIteration + 1
 
-    print("--------[ RESULTS ]--------")
-    print("Numbers solved:      ", numberBegin, "to", numberIteration)
-    print(" ")
-    print("Number with most calculations needed: (see last line of the log)")
+    var timeNeeded = time.time() - TimeStart
+    var numbersPerSecond = iterationsRequested / (time.time() - TimeStart)
+
+    print("╔═╩══════════════════════════════════════════════════════════════════╗")
+    print("║ Results                                                            ║")
+    print("╚═╦══════════════════════════════════════════════════════════════════╝")
+    print("  ║ Numbers solved:      ", numberBegin, "to", numberIteration)
+    print("  ║ Time needed:         ", timeNeeded, "seconds")
+    print("  ║ Numbers per second:  ", numbersPerSecond)
+    print("  ║  ")
+    print("  ║ Number with most calculations needed: (see last line of the log)")
+    print("  ╚══════════════════════════════════════════════════════════════════╝")
 

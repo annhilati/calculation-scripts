@@ -62,6 +62,7 @@ fn main() raises:
     print("╚═╦══════════════════════════════════════════════════════════════════╝")
     print("  ║ Numbers solved:      ", numberBegin, "to", numberIteration)
     print("  ║ Time needed:         ", timeNeeded, "seconds")
+    print("  ║                      ", timeNeeded / 60.0, "minutes")
     print("  ║ Numbers per second:  ", numbersPerSecond)
     print("  ║  ")
     print("  ║ Number with most calculations needed: (see last line of the log)")

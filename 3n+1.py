@@ -8,16 +8,22 @@ def inputInt(prompt):
             return userInput
         else:
             print("[ERROR] Invalid input! Please enter an integer")
-            
-numberToBeginWith = int(inputInt("[INPUT] Number to begin solving with for 3n+1: "))
-numbersToSolve = int(inputInt("[INPUT] Numbers to solve for 3n+1: "))
+
+print("╔════════════════════════════════════════════════════════════════════╗")
+print("║ Please enter a number to start the solvation                       ║")
+print("╚═╦══════════════════════════════════════════════════════════════════╝")
+numberToBeginWith = int(inputInt("  ║ >>> "))
+print("╔═╩══════════════════════════════════════════════════════════════════╗")
+print("║ Please enter the amount of iterations to be done                   ║")
+print("╚═╦══════════════════════════════════════════════════════════════════╝")
+numbersToSolve = int(inputInt("  ║ >>> "))
 SolveTowardsMinus = False
 
 # Programm
 if SolveTowardsMinus == True:
-    print(f"[INFO]  Numbers will be solved towards negative infinity until the specified calculations have been completed")
+    print(f"  ║ [INFO]  Numbers will be solved towards negative infinity until the specified calculations have been completed")
 else:
-    print(f"[INFO]  Numbers will be solved towards positive infinity until the specified calculations have been completed")
+    print(f"  ║ [INFO]  Numbers will be solved towards positive infinity until the specified calculations have been completed")
 
 startTime = time.time()
 numbersStillToSolve = numbersToSolve
@@ -25,6 +31,10 @@ operationsDone = 0
 operationsRecord = -1
 
 numberToSolveFor = numberToBeginWith
+
+print("╔═╩══════════════════════════════════════════════════════════════════╗")
+print("║ Beginning Calculating...                                           ║")
+print("╚═╦══════════════════════════════════════════════════════════════════╝")
 
 while numbersStillToSolve > 0: # and numberToSolveFor >= numberToBeginWith:
     numberCalc = numberToSolveFor
@@ -39,7 +49,7 @@ while numbersStillToSolve > 0: # and numberToSolveFor >= numberToBeginWith:
     # Schreibt neue Rekorde in die Konsole
     operationsDone = operationsDone + operationsCalc
     if operationsCalc > operationsRecord:
-        print(f"[{time.time() - startTime:.2f}s] Number {numberToSolveFor} broke the record of {operationsRecord} operations which is now {operationsCalc}, {operationsDone} total operations so far")
+        print(f"  ║ [{time.time() - startTime:.2f}s] Number {numberToSolveFor} broke the record of {operationsRecord} operations which is now {operationsCalc}, {operationsDone} total operations so far")
         operationsRecord = operationsCalc
 
     # Gibt an, welche Zahl als nächstes gelöst wird
@@ -50,10 +60,12 @@ while numbersStillToSolve > 0: # and numberToSolveFor >= numberToBeginWith:
         numberToSolveFor = numberToSolveFor - 1
 
 # Ausgabe
-print("--------[ RESULTS ]--------")
-print(f"Numbers solved:      {numberToBeginWith} to {numberToSolveFor}")
-print(f"Time needed:         {time.time() - startTime:.2f}s")
-print(f"Numbers per second:  {numbersToSolve / (time.time() - startTime):.2f}")
-print(" ")
-print(f"Number with most calculations needed: (see last line of the log)")
+print("╔═╩══════════════════════════════════════════════════════════════════╗")
+print("║ Results                                                            ║")
+print("╚════════════════════════════════════════════════════════════════════╝")
+print(f"  ║ Numbers solved:      {numberToBeginWith} to {numberToSolveFor}")
+print(f"  ║ Time needed:         {time.time() - startTime:.2f}s")
+print(f"  ║ Numbers per second:  {numbersToSolve / (time.time() - startTime):.2f}")
+print(f"  ║  ")
+print(f"  ║ Number with most calculations needed: (see last line of the log)")
 

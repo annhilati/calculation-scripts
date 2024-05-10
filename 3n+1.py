@@ -60,12 +60,13 @@ while numbersStillToSolve > 0: # and numberToSolveFor >= numberToBeginWith:
         numberToSolveFor = numberToSolveFor - 1
 
 # Ausgabe
-print("╔═╩══════════════════════════════════════════════════════════════════╗")
-print("║ Results                                                            ║")
-print("╚════════════════════════════════════════════════════════════════════╝")
+print(f"╔═╩══════════════════════════════════════════════════════════════════╗")
+print(f"║ Results                                                            ║")
+print(f"╚═╦══════════════════════════════════════════════════════════════════╝")
 print(f"  ║ Numbers solved:      {numberToBeginWith} to {numberToSolveFor}")
 print(f"  ║ Time needed:         {time.time() - startTime:.2f}s")
 print(f"  ║ Numbers per second:  {numbersToSolve / (time.time() - startTime):.2f}")
 print(f"  ║  ")
 print(f"  ║ Number with most calculations needed: (see last line of the log)")
+print(f"  ╚══════════════════════════════════════════════════════════════════╝")
 

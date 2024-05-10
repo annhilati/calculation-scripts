@@ -11,9 +11,9 @@ fn inputInt(prompt: String) raises -> Int:
         except:
             print("  ║ [ERROR] Invalid input! Please enter an integer")
 
-fn round_float(value: Float16, decimals: Int) -> Float16:
-    var multiplier: Int = 10 ** decimals
-    return int(value * multiplier) / multiplier
+# fn round_float(value: Float16, decimals: Int) -> Float16:
+#     var multiplier: Int = 10 ** decimals
+#     return int(value * multiplier) / multiplier
 
 fn main() raises:
     var time = Python.import_module("time")
@@ -42,7 +42,7 @@ fn main() raises:
         var opsCalc: Int = 0
 
         var x: Int = numberIteration
-        while not x == 1 or 0 or -1 or -5 or -17:
+        while x != 1 and x != 0 and x != -1 and x != -5 and x != -17:
             if x % 2 == 1:
                 x = x * 3 + 1
             else:
@@ -59,8 +59,8 @@ fn main() raises:
         iterationsStill = iterationsStill - 1
         numberIteration = numberIteration + 1
 
-    #var timeNeeded = time.time() - TimeStart
-    var timeNeeded = round_float(Float16(time.time() - TimeStart), 2)
+    var timeNeeded = time.time() - TimeStart
+    #var timeNeeded = round_float(Float16(time.time() - TimeStart), 2)
     var numbersPerSecond = iterationsRequested / (time.time() - TimeStart)
 
     print("╔═╩══════════════════════════════════════════════════════════════════╗")

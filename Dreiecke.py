@@ -1,4 +1,4 @@
-from math import sqrt
+from math import sqrt, acos, pi as pi
 
 def inputRealNotZero(prompt):
     while True:
@@ -14,6 +14,9 @@ def inputRealNotZero(prompt):
 
 def v(sideVector):
     return sideVector[1]
+
+def degree(radian):
+    return radian * (180 / pi)
 
 print("╔════════════════════════════════════════════════════════════════════╗")
 print("║ Geben Sie Daten für ein Dreieck an                                 ║")
@@ -48,15 +51,6 @@ else:
     print("  ║ [COMMENT] Die Seiten ergeben ein gültiges Dreieck")
     print("  ║ ")
 
-    # Rechtwinkeleigenschaften
-    if v(sides[2]) ** 2 == v(sides[0]) ** 2 + v(sides[1]) ** 2:
-        print(f"  ║ [COMMENT] Das Dreieck ist rechtwinklig")
-        print(f"  ║ Die Hypothenuse ist {sides[2][0]}")
-    else: 
-        print(f"  ║ [COMMENT] Das Dreieck hat keinen rechten Winkel")
-    
-    print("  ║ ")
-
     # Fläche
     s = (sideA + sideB + sideC) / 2
     area = sqrt(s * (s - sideA) * (s - sideB) * (s - sideC))
@@ -66,7 +60,22 @@ else:
     heightA = (area * 2) / sideA
     heightB = (area * 2) / sideB
     heightC = (area * 2) / sideC
-
     print(f"  ║ Höhe auf a ≈ {heightA:.2f}")
     print(f"  ║ Höhe auf b ≈ {heightB:.2f}")
     print(f"  ║ Höhe auf c ≈ {heightC:.2f}")
+    print(f"  ║")
+
+    # Innenwinkel
+    angleAlpha = degree(acos((sideB ** 2 + sideC ** 2 - sideA ** 2) / (2 * sideB * sideC)))
+    angleBeta = degree(acos((sideA ** 2 + sideC ** 2 - sideB ** 2) / (2 * sideA * sideC)))
+    angleGamma = degree(acos((sideA ** 2 + sideB ** 2 - sideC ** 2) / (2 * sideA * sideB)))
+    print(f"  ║ α = ∠A ≈ {angleAlpha:.2f}")
+    print(f"  ║ β = ∠B ≈ {angleBeta:.2f}")
+    print(f"  ║ γ = ∠C ≈ {angleGamma:.2f}")
+
+    # Rechtwinkeleigenschaften
+    if v(sides[2]) ** 2 == v(sides[0]) ** 2 + v(sides[1]) ** 2:
+        print(f"  ║ [COMMENT] Das Dreieck ist rechtwinklig")
+        print(f"  ║ Die Hypothenuse ist {sides[2][0]}")
+    else: 
+        print(f"  ║ [COMMENT] Das Dreieck hat keinen rechten Winkel")

@@ -31,28 +31,42 @@ print("║ Geben Sie die Seitenlänge von c an.                                �
 print("╚═╦══════════════════════════════════════════════════════════════════╝")
 sideC = inputRealNotZero("  ║ c <= ")
 
-sides = [["a", sideA], ["b", sideB], ["c", sideC]]
-sidesSorted = sorted(sides, key=lambda x: (x[1], x[0]))
-#print("  ║ [DEBUG]", sidesSorted) # Debug
+sidesListed = [["a", sideA], ["b", sideB], ["c", sideC]]
+sides = sorted(sidesListed, key=lambda x: (x[1], x[0]))
+#print("  ║ [DEBUG]", sides) # Debug
 
 print(f"╔═╩══════════════════════════════════════════════════════════════════╗")
-print(f"║ Daten werden geprüft...                                            ║")
-print(f"╚═╦══╦═══════════════════════════════════════════════════════════════╝")
-print(f"  ║  ║ Seite a: {sideA}")
-print(f"  ║  ║ Seite b: {sideB}")
-print(f"  ║  ║ Seite c: {sideC}")
+print(f"║ Daten werden geprüft...                                             ")
+print(f"║   a = {sideA}")
+print(f"║   b = {sideB}")
+print(f"║   c = {sideC}")
+print(f"╚═╦══════════════════════════════════════════════════════════════════╝")
 
-if not v(sidesSorted[2]) <= v(sidesSorted[0]) + v(sidesSorted[1]):
-    print("  ║ [COMMENT] Die Seiten ergeben kein gültiges Dreieck")
+if not v(sides[2]) <= v(sides[0]) + v(sides[1]):
+    print("  ║ [COMMENT] Die Seitenlängen ergeben kein gültiges Dreieck")
 else:
-    # Ist ein Dreieck
     print("  ║ [COMMENT] Die Seiten ergeben ein gültiges Dreieck")
+    print("  ║ ")
 
-    if v(sidesSorted[2]) ** 2 == v(sidesSorted[0]) ** 2 + v(sidesSorted[1]) ** 2:
-        print(f"  ║ [COMMENT] Das Dreieck ist pythagoräisch")
-        print(f"  ║  ║ Die Hypothenuse ist {sidesSorted[2][0]}")
+    # Rechtwinkeleigenschaften
+    if v(sides[2]) ** 2 == v(sides[0]) ** 2 + v(sides[1]) ** 2:
+        print(f"  ║ [COMMENT] Das Dreieck ist rechtwinklig")
+        print(f"  ║ Die Hypothenuse ist {sides[2][0]}")
+    else: 
+        print(f"  ║ [COMMENT] Das Dreieck hat keinen rechten Winkel")
     
+    print("  ║ ")
+
+    # Fläche
     s = (sideA + sideB + sideC) / 2
     area = sqrt(s * (s - sideA) * (s - sideB) * (s - sideC))
+    print(f"  ║ Fläche ≈ {area:.2f}")
 
-    print(f"  ║ Die Fläche beträgt {area}")
+    # Höhen
+    heightA = (area * 2) / sideA
+    heightB = (area * 2) / sideB
+    heightC = (area * 2) / sideC
+
+    print(f"  ║ Höhe auf a ≈ {heightA:.2f}")
+    print(f"  ║ Höhe auf b ≈ {heightB:.2f}")
+    print(f"  ║ Höhe auf c ≈ {heightC:.2f}")

@@ -69,9 +69,9 @@ else:
     angleAlpha = degree(acos((sideB ** 2 + sideC ** 2 - sideA ** 2) / (2 * sideB * sideC)))
     angleBeta = degree(acos((sideA ** 2 + sideC ** 2 - sideB ** 2) / (2 * sideA * sideC)))
     angleGamma = degree(acos((sideA ** 2 + sideB ** 2 - sideC ** 2) / (2 * sideA * sideB)))
-    print(f"  ║ α = ∠A ≈ {angleAlpha:.2f}")
-    print(f"  ║ β = ∠B ≈ {angleBeta:.2f}")
-    print(f"  ║ γ = ∠C ≈ {angleGamma:.2f}")
+    print(f"  ║ α = ∠A ≈ {angleAlpha:.2f}°")
+    print(f"  ║ β = ∠B ≈ {angleBeta:.2f}°")
+    print(f"  ║ γ = ∠C ≈ {angleGamma:.2f}°")
 
     # Rechtwinkeleigenschaften
     if v(sides[2]) ** 2 == v(sides[0]) ** 2 + v(sides[1]) ** 2:

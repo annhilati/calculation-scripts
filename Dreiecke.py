@@ -46,7 +46,7 @@ while True:
     print(f"║   c = {sideC}")
     print(f"╚═╦══════════════════════════════════════════════════════════════════╝")
 
-    if not v(sides[2]) <= v(sides[0]) + v(sides[1]):
+    if not v(sides[2]) < v(sides[0]) + v(sides[1]):
         print("  ║ [COMMENT] Die Seitenlängen ergeben kein gültiges Dreieck")
     else:
         print("  ║ [COMMENT] Die Seiten ergeben ein gültiges Dreieck")
@@ -55,15 +55,15 @@ while True:
         # Fläche
         s = (sideA + sideB + sideC) / 2
         area = sqrt(s * (s - sideA) * (s - sideB) * (s - sideC))
-        print(f"  ║ Fläche ≈ {area:.2f}")
+        print(f"  ║ Fläche ≈ {area:.3f}")
 
         # Höhen
         heightA = (area * 2) / sideA
         heightB = (area * 2) / sideB
         heightC = (area * 2) / sideC
-        print(f"  ║ Höhe auf a ≈ {heightA:.2f}")
-        print(f"  ║ Höhe auf b ≈ {heightB:.2f}")
-        print(f"  ║ Höhe auf c ≈ {heightC:.2f}")
+        print(f"  ║ Höhe auf a ≈ {heightA:.3f}")
+        print(f"  ║ Höhe auf b ≈ {heightB:.3f}")
+        print(f"  ║ Höhe auf c ≈ {heightC:.3f}")
         print(f"  ║")
 
         # Innenwinkel
@@ -83,8 +83,8 @@ while True:
             print(f"  ║ {sides[1][0]} und {sides[2][0]} sind gleich")
         else: 
             print(f"  ║ Typ: unregelmäßig")
-        print(f"  ║")
         if v(sides[2]) ** 2 == v(sides[0]) ** 2 + v(sides[1]) ** 2:
+            print(f"  ║")
             print(f"  ║ Das Dreieck ist rechtwinklig")
             print(f"  ║ Die Hypothenuse ist {sides[2][0]}")
 

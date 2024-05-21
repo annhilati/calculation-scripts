@@ -33,7 +33,7 @@ def inputInt(prompt):
             print("[ERROR] Invalid input! Please enter an integer")
 
 print("╔════════════════════════════════════════════════════════════════════╗")
-print("║ Please enter an amount of Endereyes in a endportal                 ║")
+print("║ Please enter an amount of Endereyes in a End-Portal                ║")
 print("╚═╦══════════════════════════════════════════════════════════════════╝")
 endereyes = int(inputInt("  ║ >>> "))
 print(f"╔═╩══════════════════════════════════════════════════════════════════╗")

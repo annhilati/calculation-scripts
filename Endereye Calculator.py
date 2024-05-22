@@ -4,18 +4,18 @@ def factorial(n: int):
         out *= i
     return out
 
-def binominal_coefficient(n: int, k: int):
+def binomial_coefficient(n: int, k: int):
     return factorial(n) / (factorial(k) * factorial(n - k))
-def binominal_distribution(n: int, k: int, p: float):
-    return binominal_coefficient(n, k) * (p ** k) * ((1-p) ** (n - k))
+def binomial_distribution(n: int, k: int, p: float):
+    return binomial_coefficient(n, k) * (p ** k) * ((1-p) ** (n - k))
 
 
 def bdf_exact(n: int, k: int, p: float): # Funktioniert definitiv
-    return binominal_distribution(n, k, p)
+    return binomial_distribution(n, k, p)
 def bdf_max(n: int, k_max: int, p: float): # Funktioniert definitiv
     out: float = 0
     for i in range(0, k_max + 1):
-        out = out + binominal_distribution(n, i, p)
+        out = out + binomial_distribution(n, i, p)
     return out
 def bdf_min(n: int, k_min: int, p: float):
     return 1 - bdf_max(n, k_min - 1, p)

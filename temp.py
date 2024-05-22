@@ -1,1 +1,3 @@
-import mypackage
+from lib.mymodule import hello
+
+hello()

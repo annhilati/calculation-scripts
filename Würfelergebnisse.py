@@ -11,7 +11,7 @@ def inputInt(prompt):
 def random_tests(iterations, list):
     for i in range(0, iterations):
         resultIt = random.randint(1, 6) + random.randint(1, 6)
-        print(f"  ║ {resultIt} wurde gewürfelt")
+        #print(f"  ║ {resultIt} wurde gewürfelt")
         list[resultIt - 1] = list[resultIt - 1] + 1
 
 while True:
@@ -30,16 +30,16 @@ while True:
     print(f"╔═╩══════════════════════════════════════════════════════════════════╗")
     print(f"║ Ergebnisse                                                         ║")
     print(f"╚═╦══════════════════════════════════════════════════════════════════╝")
-    #print(f"  ║ 1:  {'█' * int(results[0] / iterationsReq * 350)} {results[0]}")
-    print(f"  ║ 2:  {'█' * int(results[1] / iterationsReq * 350)} {results[1]} ({(results[1] / iterationsReq * 100):.2f}%)")
-    print(f"  ║ 3:  {'█' * int(results[2] / iterationsReq * 350)} {results[2]} ({(results[2] / iterationsReq * 100):.2f}%)")
-    print(f"  ║ 4:  {'█' * int(results[3] / iterationsReq * 350)} {results[3]} ({(results[3] / iterationsReq * 100):.2f}%)")
-    print(f"  ║ 5:  {'█' * int(results[4] / iterationsReq * 350)} {results[4]} ({(results[4] / iterationsReq * 100):.2f}%)")
-    print(f"  ║ 6:  {'█' * int(results[5] / iterationsReq * 350)} {results[5]} ({(results[5] / iterationsReq * 100):.2f}%)")
-    print(f"  ║ 7:  {'█' * int(results[6] / iterationsReq * 350)} {results[6]} ({(results[6] / iterationsReq * 100):.2f}%)")
-    print(f"  ║ 8:  {'█' * int(results[7] / iterationsReq * 350)} {results[7]} ({(results[7] / iterationsReq * 100):.2f}%)")
-    print(f"  ║ 9:  {'█' * int(results[8] / iterationsReq * 350)} {results[8]} ({(results[8] / iterationsReq * 100):.2f}%)")
-    print(f"  ║ 10: {'█' * int(results[9] / iterationsReq * 350)} {results[9]} ({(results[9] / iterationsReq * 100):.2f}%)")
-    print(f"  ║ 11: {'█' * int(results[10] / iterationsReq * 350)} {results[10]} ({(results[10] / iterationsReq * 100):.2f}%)")
-    print(f"  ║ 12: {'█' * int(results[11] / iterationsReq * 350)} {results[11]} ({(results[11] / iterationsReq * 100):.2f}%)")
+    print(f"  ║ 2:  {'█' * int(results[1] / iterationsReq * 100)} {results[1]} ({(results[1] / iterationsReq * 100):.2f}%)")
+    print(f"  ║ 3:  {'█' * int(results[2] / iterationsReq * 100)} {results[2]} ({(results[2] / iterationsReq * 100):.2f}%)")
+    print(f"  ║ 4:  {'█' * int(results[3] / iterationsReq * 100)} {results[3]} ({(results[3] / iterationsReq * 100):.2f}%)")
+    print(f"  ║ 5:  {'█' * int(results[4] / iterationsReq * 100)} {results[4]} ({(results[4] / iterationsReq * 100):.2f}%)")
+    print(f"  ║ 6:  {'█' * int(results[5] / iterationsReq * 100)} {results[5]} ({(results[5] / iterationsReq * 100):.2f}%)")
+    print(f"  ║ 7:  {'█' * int(results[6] / iterationsReq * 100)} {results[6]} ({(results[6] / iterationsReq * 100):.2f}%)")
+    print(f"  ║ 8:  {'█' * int(results[7] / iterationsReq * 100)} {results[7]} ({(results[7] / iterationsReq * 100):.2f}%)")
+    print(f"  ║ 9:  {'█' * int(results[8] / iterationsReq * 100)} {results[8]} ({(results[8] / iterationsReq * 100):.2f}%)")
+    print(f"  ║ 10: {'█' * int(results[9] / iterationsReq * 100)} {results[9]} ({(results[9] / iterationsReq * 100):.2f}%)")
+    print(f"  ║ 11: {'█' * int(results[10] / iterationsReq * 100)} {results[10]} ({(results[10] / iterationsReq * 100):.2f}%)")
+    print(f"  ║ 12: {'█' * int(results[11] / iterationsReq * 100)} {results[11]} ({(results[11] / iterationsReq * 100):.2f}%)")
+    print(f"  ╚══════════════════════════════════════════════════════════════════╝")
     input()

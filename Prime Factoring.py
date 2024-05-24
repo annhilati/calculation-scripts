@@ -5,6 +5,8 @@ def inputPosInt(prompt: str) -> int:
             temp = int(userInput)
             if temp > 0:
                 return temp
+            else:
+                raise ValueError
         except:
             print("  ║ [ERROR] Invalid input! Please enter an integer")
 
@@ -25,7 +27,7 @@ def isInteger(number: float | int) -> bool:
 #print(isInteger(5))
 
 while True:
-    dividers: list = []
+    #dividers: list = []
     primefactors: list = []
 
     print(f"╔════════════════════════════════════════════════════════════════════╗")
@@ -33,7 +35,7 @@ while True:
     print(f"╚═╦══════════════════════════════════════════════════════════════════╝")
     number: int = inputPosInt(f"  ║ >>> ") 
     if isPrime(number):
-        dividers.append(number)
+        primefactors.append(number)
     else:
         numberCalc = number
         for factorToTry in range(2, number + 1):

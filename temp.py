@@ -1,3 +1,3 @@
-from lib.mymodule import hello
+from acemeta.console import log
 
-hello()
+log("heyho")

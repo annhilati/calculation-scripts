@@ -14,7 +14,7 @@ def random_tests(iterations: int, tallysheet: list):
     for i in range(0, iterations):
         resultIt = random.randint(1, 6) + random.randint(1, 6)
         #print(f"  ║ {resultIt} wurde gewürfelt")
-        tallysheet[resultIt - 1] = tallysheet[resultIt - 1] + 1
+        tallysheet[resultIt - 1] += 1
 
 while True:
     print(f"╔════════════════════════════════════════════════════════════════════╗")

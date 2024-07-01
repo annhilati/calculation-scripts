@@ -53,6 +53,7 @@ class Interface:
             number = int(number)
             if number > 0:
                 self.ausgabe_1.configure(text="Calculating...")
+                self.ausgabe_2.configure(text=" ")
                 self.master.update_idletasks()
 
                 if isPrime(number):

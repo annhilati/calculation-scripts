@@ -42,8 +42,8 @@ class Interface:
     #-------------------------------------------------#
     
     def factor(self, event=None):
-        self.ausgabe_1.configure(text=" ")
-        self.ausgabe_2.configure(text=" ")
+        self.result_1 = " "
+        self.result_2 = " "
         self.master.update_idletasks()
 
         primefactors: list[int] = []
@@ -53,7 +53,6 @@ class Interface:
             number = int(number)
             if number > 0:
                 self.ausgabe_1.configure(text="Calculating...")
-                self.ausgabe_2.configure(text=" ")
                 self.master.update_idletasks()
 
                 if isPrime(number):

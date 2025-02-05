@@ -157,7 +157,7 @@ def replace_with_unicode_small_caps(text):
     return ''.join(result)
 
 # Beispielaufrufe
-input_text = "Gelaber"
+input_text = "Shitposting"
 print("Bold:", replace_with_unicode_bold(input_text))
 print("Double-Struck:", replace_with_unicode_double_struck(input_text))
 print("Fraktur:", replace_with_unicode_fraktur(input_text))
